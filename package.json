@@ -2,10 +2,21 @@
   "name": "@sbmdkl/nepali-date-converter",
   "version": "1.1.1",
   "description": "A javascript package to convert nepali date BS (Bikram Sambat) to AD and vice-versa.",
+  "repository": "sbmdkl/nepali-date-converter",
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [
+    "nepali-date-converter",
+    "nepali-date",
+    "english-to-nepali-date",
+    "AD-BS converter",
+    "BS-AD converter",
+    "ad-to-bs",
+    "nepali to english date",
+    "english to nepali date"
+  ],
   "author": "Shubham Dhakal",
   "license": "ISC"
 }

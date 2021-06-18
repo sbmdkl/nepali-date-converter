@@ -1,6 +1,6 @@
-const ADBS = require('../src');
+const { adToBs, bsToAd } = require('../src');
 try {
-  console.log(ADBS.adToBs('1999-06-08'))
+  console.log(adToBs('2016-02-15'))
 } catch (e) {
   console.log(e.message)
 }
