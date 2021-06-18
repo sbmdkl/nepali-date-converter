@@ -7,7 +7,7 @@ function adToBs(adDate) {
 	const today = new Date(adDate);
 	const daysDifference = Math.floor((today.getTime() - startDate.getTime()) / 86400000);
 	if(daysDifference < 0) {
-		throw new Error('Date out of range');
+		throw new Error('AD Date out of range');
 	}
 	return evaluateNepaliDate(daysDifference);
 }

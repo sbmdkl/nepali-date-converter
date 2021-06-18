@@ -150,6 +150,11 @@ function dateSanitizer(date) {
 
 function AdDateSanitizer(date) {
 	const {year, month, day} = dateSanitizer(date);
+	
+	if(year > 2040) {
+		throw new Error('AD Date out of range');
+	}
+
 	if(month > 31) {
 		throw new Error('Month is invalid.')
 	} 
@@ -161,8 +166,8 @@ function AdDateSanitizer(date) {
 
 function BsDateSanitizer(date) {
 	const {year, month, day} = dateSanitizer(date);
-	if(year < 1978) {
-		throw new Error('Date out of range');
+	if(year < 1978 || year > 2099) {
+		throw new Error('BS Date out of range');
 	}
 	return `${year}-${('0' + month).slice(-2)}-${('0' + day).slice(-2)}`;
 }
