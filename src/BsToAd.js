@@ -1,6 +1,6 @@
 const { bs, BsDateSanitizer } = require('./config');
-// const startNepaliDate = '2000-01-01';
-const startEnglishDate = '1943-04-14';
+// const startNepaliDate = '1978-01-01';
+const startEnglishDate = '1921-04-13';
 
 function bsToAd(selectedDate) {
 	selectedDate = BsDateSanitizer(selectedDate);
@@ -9,7 +9,7 @@ function bsToAd(selectedDate) {
 	const month = parseInt(splittedDate[1]);
 	const day = parseInt(splittedDate[2]);
 	let daysDiff = 0;
-	for (let i = 2000; i <= year; i++) {
+	for (let i = 1978; i <= year; i++) {
 		if (i === year) {
 			for (let j = 1; j < month; j++) {
 				daysDiff += bs[i][j];

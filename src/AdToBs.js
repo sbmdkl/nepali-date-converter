@@ -1,6 +1,6 @@
 const { bs, AdDateSanitizer } = require('./config');
-// const startNepaliDate = '2000-01-01';
-const startEnglishDate = '1943-04-14';
+// const startNepaliDate = '1978-01-01';
+const startEnglishDate = '1921-04-13';
 function adToBs(adDate) {
 	adDate = AdDateSanitizer(adDate);
 	const startDate = new Date(startEnglishDate);
@@ -18,7 +18,7 @@ function evaluateNepaliDate(daysElpased) {
 	let currentDay = 0;
 	let totalD = 0;
 	let flag = false;
-	for (let i = 2000; i < 2100; i++) {
+	for (let i = 1978; i < 2100; i++) {
 		if (flag) {
 			break;
 		}
