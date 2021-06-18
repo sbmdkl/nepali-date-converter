@@ -1,0 +1,11 @@
+{
+  "name": "@sbmdkl/nepali-date-converter",
+  "version": "1.0.0",
+  "description": "A javascript package to convert nepali date BS (Bikram Sambat) to AD and vice-versa.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shubham Dhakal",
+  "license": "ISC"
+}
