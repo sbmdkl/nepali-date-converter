@@ -1,5 +1,5 @@
 const adToBs = require('./AdToBs');
-const bsToAd = require('./bsToAd');
+const bsToAd = require('./BsToAd');
 
 module.exports = {
   adToBs,
