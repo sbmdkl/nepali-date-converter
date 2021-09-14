@@ -2,7 +2,7 @@
 
 [![NPM](https://img.shields.io/npm/v/@sbmdkl/nepali-date-converter.svg)](https://www.npmjs.com/package/@sbmdkl/nepali-date-converter) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-A javascript package to convert nepali date BS (Bikram Sambat) to AD and vice-versa.
+A javascript package to convert nepali date BS (Bikram Sambat) to AD and vice-versa. Also include a feature to calculate age in nepali date.
 
 ## Installation
 
@@ -13,23 +13,28 @@ npm install @sbmdkl/nepali-date-converter
 ## Usage
 
 ```jsx
-const { adToBs, bsToAd } = require('@sbmdkl/nepali-date-converter');
+const { adToBs, bsToAd, calculateAge } = require('@sbmdkl/nepali-date-converter');
 try {
-  const bsDate = adToBs('2078-03-05');
-  console.log(bsDate);
-
+	const bsDate = adToBs('2078-03-05');
+	console.log(bsDate);
+	// to calculate age
+	const myAge = calculateAge('2070-10-10');
+	console.log(myAge);
 } catch (e) {
-  console.log(e.message)
+	console.log(e.message);
 }
 ```
 
 ## Available Methods
+
 <pre>
 adToBs('YYYY-MM-DD') - convert AD to BS date
 bsToAd('YYYY-MM-DD') - convert BS to AD date
+calculateAge('YYYY-MM-DD') - calculate age from BS date.
 </pre>
 
 ## dateFormat
+
 Format the date to provide various output based on format string
 
 <pre>
@@ -39,12 +44,12 @@ DD   - Day of Month with zero padding (01-32)
 </pre>
 
 ## Date Range
->Date convert will works between these Date Range:
+
+> Date convert will works between these Date Range:
 
 Date Range for English Date : 1921 AD to 2040 AD
 
 Date Range for Nepali Date : 1978 BS to 2099 BS
-
 
 ## License
 
