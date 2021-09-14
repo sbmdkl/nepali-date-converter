@@ -1,4 +1,5 @@
 const { bs, BsDateSanitizer } = require('./config');
+const evaluateEnglishDate = require('./utils/evaluateEnglishDate');
 // const startNepaliDate = '1978-01-01';
 const startEnglishDate = '1921-04-13';
 
@@ -22,15 +23,6 @@ function bsToAd(selectedDate) {
 		}
 	}
 	return evaluateEnglishDate(startEnglishDate, daysDiff);
-}
-
-function evaluateEnglishDate(date, days) {
-	var result = new Date(date);
-	result.setDate(result.getDate() + days);
-	const year = result.getFullYear();
-	const month = result.getMonth() + 1;
-	const day = result.getDate();
-	return `${year}-${month > 9 ? month : '0' + month}-${day > 9 ? day : '0' + day}`;
 }
 
 module.exports = bsToAd;
