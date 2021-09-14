@@ -9,6 +9,14 @@ function ageCalculator(bsDate) {
 	const day = parseInt(splittedDate[2]);
 
 	const { currentYear, currentMonth, currentDay } = today();
+	// validate user input date not exceed today
+	if (
+		year > currentYear ||
+		(year === currentYear && month > currentMonth) ||
+		(year === currentYear && month === currentMonth && day > currentDay)
+	) {
+		throw new Error('Date cannot be greater then today');
+	}
 	let ageDate = {
 		year: 0,
 		month: 0,

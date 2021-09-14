@@ -25,4 +25,10 @@ describe('Age Calculator', () => {
 	test('Case VIII', () => {
 		expect(calculateAge('2054-05-29')).toEqual({ year: 24, month: 0, day: 0 });
 	});
+	test('Case IX : Greater Date ', () => {
+		expect(() => calculateAge('2078-08-29')).toThrow('Date cannot be greater then today');
+	});
+	test('Case X : Today date ', () => {
+		expect(calculateAge('2078-05-29')).toEqual({ year: 0, month: 0, day: 0 });
+	});
 });
