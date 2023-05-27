@@ -1,4 +1,4 @@
-import { BS } from '../config';
+import { BS, DATES } from '../config';
 import { currentDate } from '../interfaces';
 import { formattedDate } from './date';
 
@@ -8,11 +8,11 @@ function evaluateNepaliDate(daysElpased: number, format = true): string | curren
 	let currentDay = 0;
 	let totalD = 0;
 	let flag = false;
-	for (let i = 1978; i < 2100; i++) {
+	for (let i = DATES.MIN_YEAR_BS; i <= DATES.MAX_YEAR_BS; i++) {
 		if (flag) {
 			break;
 		}
-		for (let j = 1; j <= 12; j++) {
+		for (let j = DATES.MIN_MONTH; j <= DATES.MAX_MONTH; j++) {
 			totalD += BS[i][j];
 			if (daysElpased - totalD < 0) {
 				currentDay = daysElpased - totalD + BS[i][j] + 1;

@@ -1,2 +1,3 @@
 declare const formattedDate: (year: number, month: number, day: number) => string;
-export { formattedDate };
+declare const splitDate: (date: string) => number[];
+export { formattedDate, splitDate };

@@ -1,14 +1,10 @@
 import { BS, DATES } from '../config';
 import { date } from '../interfaces';
 import Errors from '../constants/errors';
-import { formattedDate } from './date';
+import { formattedDate, splitDate } from './date';
 
 function dateSanitizer(date: string): date {
-	const splittedDate = date.split('-');
-	if (splittedDate.length !== 3) {
-		throw new Error(Errors.DATE_FORMAT_INVALID);
-	}
-	const [year, month, day] = splittedDate.map(Number);
+	const [year, month, day] = splitDate(date);
 
 	if (day > DATES.MAX_DAY || day < DATES.MIN_DAY || !day) {
 		throw new Error(Errors.INVALID_DAY);

@@ -1,14 +1,12 @@
 import today from './today';
-import { BS } from './config';
+import { BS, DATES } from './config';
 import { BsDateSanitizer } from './utils/dateSanitizer';
 import Errors from './constants/errors';
+import { splitDate } from './utils/date';
 
 function ageCalculator(bsDate: string) {
 	const selectedDate = BsDateSanitizer(bsDate);
-	const splittedDate = selectedDate.split('-');
-	const year = parseInt(splittedDate[0]);
-	const month = parseInt(splittedDate[1]);
-	const day = parseInt(splittedDate[2]);
+	const [year, month, day] = splitDate(selectedDate);
 
 	const { currentYear, currentMonth, currentDay } = today();
 	// validate user input date not exceed today
@@ -30,14 +28,14 @@ function ageCalculator(bsDate: string) {
 				ageDate.day = currentDay - day;
 				if (currentMonth >= month) ageDate.month = currentMonth - month;
 				else {
-					ageDate.month = 12 - month + currentMonth;
+					ageDate.month = DATES.MAX_MONTH - month + currentMonth;
 					ageDate.year--;
 				}
 			} else {
 				ageDate.day += currentDay;
 				if (currentMonth > month) ageDate.month = currentMonth - month - 1;
 				else {
-					ageDate.month = 12 - month + currentMonth - 1;
+					ageDate.month = DATES.MAX_MONTH - month + currentMonth - 1;
 					ageDate.year--;
 				}
 			}

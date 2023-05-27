@@ -1,21 +1,21 @@
-import { BS, START_ENGLISH_DATE } from './config';
+import { BS, DATES, START_ENGLISH_DATE } from './config';
+import { splitDate } from './utils/date';
 import { BsDateSanitizer } from './utils/dateSanitizer';
 import evaluateEnglishDate from './utils/evaluateEnglishDate';
 
 function bsToAd(selectedDate: string) {
 	selectedDate = BsDateSanitizer(selectedDate);
-	const splittedDate = selectedDate.split('-');
-	const [year, month, day] = splittedDate.map(Number);
+	const [year, month, day] = splitDate(selectedDate);
 
 	let daysDiff = 0;
-	for (let i = 1978; i <= year; i++) {
+	for (let i = DATES.MIN_YEAR_BS; i <= year; i++) {
 		if (i === year) {
-			for (let j = 1; j < month; j++) {
+			for (let j = DATES.MIN_MONTH; j < month; j++) {
 				daysDiff += BS[i][j];
 			}
 			daysDiff += day - 1;
 		} else {
-			for (let j = 1; j <= 12; j++) {
+			for (let j = DATES.MIN_MONTH; j <= DATES.MAX_MONTH; j++) {
 				daysDiff += BS[i][j];
 			}
 		}
