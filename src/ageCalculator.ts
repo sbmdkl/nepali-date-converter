@@ -1,8 +1,10 @@
-const { bs, BsDateSanitizer } = require('./config');
-const today = require('./today');
+import today from './today';
+import { BS } from './config';
+import { BsDateSanitizer } from './utils/dateSanitizer';
+import Errors from './constants/errors';
 
-function ageCalculator(bsDate) {
-	selectedDate = BsDateSanitizer(bsDate);
+function ageCalculator(bsDate: string) {
+	const selectedDate = BsDateSanitizer(bsDate);
 	const splittedDate = selectedDate.split('-');
 	const year = parseInt(splittedDate[0]);
 	const month = parseInt(splittedDate[1]);
@@ -15,12 +17,12 @@ function ageCalculator(bsDate) {
 		(year === currentYear && month > currentMonth) ||
 		(year === currentYear && month === currentMonth && day > currentDay)
 	) {
-		throw new Error('Date cannot be greater then today');
+		throw new Error(Errors.DATE_GREATER_THAN_TODAY);
 	}
 	let ageDate = {
 		year: 0,
 		month: 0,
-		day: bs[year][month] - day,
+		day: BS[year][month] - day,
 	};
 	for (let i = year; i <= currentYear; i++) {
 		if (i === year) {
@@ -44,4 +46,4 @@ function ageCalculator(bsDate) {
 	return ageDate;
 }
 
-module.exports = ageCalculator;
+export default ageCalculator;

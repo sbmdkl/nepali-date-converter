@@ -1,4 +1,4 @@
-const { adToBs } = require('./index');
+const { adToBs } = require('../dist/@sbmdkl/nepali-date-converter.umd.js');
 
 describe('Age Calculator', () => {
 	test('Case I', () => {
