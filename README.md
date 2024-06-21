@@ -3,6 +3,7 @@
 [![NPM](https://img.shields.io/npm/v/@sbmdkl/nepali-date-converter.svg)](https://www.npmjs.com/package/@sbmdkl/nepali-date-converter) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 A javascript package to convert nepali date BS (Bikram Sambat) to AD and vice-versa. Also include a feature to calculate age in nepali date.
+<a href="https://codesandbox.io/p/sandbox/sbmdkl-dateconverter-yqcrg5?file=/src/index.mjs">Demo</a>.
 
 ## Installation
 
