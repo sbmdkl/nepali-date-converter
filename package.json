@@ -1,13 +1,13 @@
 {
-	"name": "@sbmdkl/nepali-date-converter",
+	"name": "@bmasmhj/nepali-date-converter",
 	"version": "2.0.2",
 	"description": "A javascript package to convert nepali date BS (Bikram Sambat) to AD and vice-versa, calcuate age from nepali date (BS)",
-	"repository": "sbmdkl/nepali-date-converter",
-	"main": "dist/@sbmdkl/nepali-date-converter.umd.js",
+	"repository": "bmasmhj/nepali-date-converter",
+	"main": "dist/@bmasmhj/nepali-date-converter.umd.js",
 	"exports": {
 		".": {
-			"import": "./dist/@sbmdkl/nepali-date-converter.es.js",
-			"require": "./dist/@sbmdkl/nepali-date-converter.umd.js"
+			"import": "./dist/@bmasmhj/nepali-date-converter.es.js",
+			"require": "./dist/@bmasmhj/nepali-date-converter.umd.js"
 		}
 	},
 	"scripts": {
