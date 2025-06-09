@@ -1,12 +1,13 @@
 import { formattedDate } from './date';
 
 function evaluateEnglishDate(date: string, days: number): string {
-	const result = new Date(date);
-	result.setDate(result.getDate() + days);
-	const year = result.getFullYear();
-	const month = result.getMonth() + 1;
-	const day = result.getDate();
-	return formattedDate(year, month, day);
+  const [year, month, day] = date.split('-').map(Number);
+  const utcDate = new Date(Date.UTC(year, month - 1, day));
+  utcDate.setUTCDate(utcDate.getUTCDate() + days);
+  const resultYear = utcDate.getUTCFullYear();
+  const resultMonth = utcDate.getUTCMonth() + 1;
+  const resultDay = utcDate.getUTCDate();
+  return formattedDate(resultYear, resultMonth, resultDay);
 }
 
 export default evaluateEnglishDate;
